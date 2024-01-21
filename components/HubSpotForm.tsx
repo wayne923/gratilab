@@ -19,9 +19,7 @@ export default function HubSpotForm() {
     }, []);
  
     return (
-      <div className="custom-hubspot-form">
-         <div id="hubspotForm"></div>
-      </div>
+      <div id="hubspotForm"></div>
     );
 }
 
