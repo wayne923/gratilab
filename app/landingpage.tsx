@@ -196,7 +196,7 @@ export default function Component() {
 
 function CurvedlineChart(props: any) {
   const chartStyle = {
-    maxWidth: '90%',
+    maxWidth: '100%',
     maxHeight: '45vh', // Adjust as needed
     margin: 'auto'
   };
