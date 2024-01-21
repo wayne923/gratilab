@@ -6,10 +6,10 @@
  */
 import Link from "next/link"
 import { ResponsiveLine } from "@nivo/line"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+// import { Input } from "@/components/ui/input"
+// import { Button } from "@/components/ui/button"
 import { ResponsiveBar } from "@nivo/bar"
-import { useState } from 'react';
+// import { useState } from 'react';
 import { HubSpotForm } from '@/components/HubSpotForm'
 import Image from 'next/image';
 
@@ -25,8 +25,7 @@ export default function Component() {
             width={55} 
             height={55} 
           />
-
-          {/* <MountainIcon className="h-6 w-6" /> */}
+          <p className='text-md font-medium'>GratiLab</p>
           <span className="sr-only">GratiLab Inc</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
@@ -62,7 +61,7 @@ export default function Component() {
                   </Link> */}
                   <> 
     <h1>Contact page</h1>
-    <HubSpotForm className="custom-hubspot-form" /> 
+    <HubSpotForm /> 
     </> 
 
                 </div>
@@ -81,9 +80,9 @@ export default function Component() {
                 <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800" id="our-vision">Our Vision</div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Transforming Work, One Team at a Time</h2>
                 <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Gratilab harnesses AI's transformative power to reshape the workplace. 
-                Our platform not only enhances collaboration and automates workflows but also grows with your team's needs. 
-                We're dedicated to building work environments that are inclusive, fulfilling, and efficient for everyone.
+                Gratilab harnesses AI&apos;s transformative power to reshape the workplace. 
+                Our platform not only enhances collaboration and automates workflows but also grows with your team&apos;s needs. 
+                We&apos;re dedicated to building work environments that are inclusive, fulfilling, and efficient for everyone.
                 </p>
               </div>
             </div>
@@ -139,28 +138,28 @@ export default function Component() {
               </h3>
 
               <div className="grid w-full grid-cols-2 lg:grid-cols-4 items-center justify-center gap-8 lg:gap-12 [&>img]:mx-auto">
-              <img
+              <Image
                 alt="Logo"
                 className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
                 height="70"
                 src="/Google.svg"
                 width="140"
               />
-              <img
+              <Image
                 alt="Logo"
                 className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
                 height="70"
                 src="/Microsoft.svg"
                 width="140"
               />
-              <img
+              <Image
                 alt="Logo"
                 className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
                 height="70"
                 src="/Amazon.svg"
                 width="140"
               />
-              <img
+              <Image
                 alt="Logo"
                 className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
                 height="70"
@@ -195,61 +194,7 @@ export default function Component() {
   )
 }
 
-function BarChart(props) {
-  return (
-    <div {...props}>
-      <ResponsiveBar
-        data={[
-          { name: "Jan", count: 111 },
-          { name: "Feb", count: 157 },
-          { name: "Mar", count: 129 },
-          { name: "Apr", count: 150 },
-          { name: "May", count: 119 },
-          { name: "Jun", count: 72 },
-        ]}
-        keys={["count"]}
-        indexBy="name"
-        margin={{ top: 0, right: 0, bottom: 40, left: 40 }}
-        padding={0.3}
-        colors={["#2563eb"]}
-        axisBottom={{
-          tickSize: 0,
-          tickPadding: 16,
-        }}
-        axisLeft={{
-          tickSize: 0,
-          tickValues: 4,
-          tickPadding: 16,
-        }}
-        gridYValues={4}
-        theme={{
-          tooltip: {
-            chip: {
-              borderRadius: "9999px",
-            },
-            container: {
-              fontSize: "12px",
-              textTransform: "capitalize",
-              borderRadius: "6px",
-            },
-          },
-          grid: {
-            line: {
-              stroke: "#f3f4f6",
-            },
-          },
-        }}
-        tooltipLabel={({ id }) => `${id}`}
-        enableLabel={false}
-        role="application"
-        ariaLabel="A bar chart showing data"
-      />
-    </div>
-  )
-}
-
-
-function CurvedlineChart(props) {
+function CurvedlineChart(props: any) {
   const chartStyle = {
     maxWidth: '90%',
     maxHeight: '45vh', // Adjust as needed
@@ -290,7 +235,6 @@ function CurvedlineChart(props) {
         yScale={{
           type: "linear",
           min: 0,
-          max: 100,
           max: "auto",
         }}
         curve="catmullRom"
@@ -329,25 +273,5 @@ function CurvedlineChart(props) {
         role="application"
       />
     </div>
-  )
-}
-
-
-function MountainIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-    </svg>
   )
 }

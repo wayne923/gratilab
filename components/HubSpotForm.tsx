@@ -1,5 +1,11 @@
 import { useEffect } from 'react';
 
+declare global {
+   interface Window {
+     hbspt: any;
+   }
+ }
+
 export default function HubSpotForm() {
     useEffect(() => {
       const script = document.createElement('script');
